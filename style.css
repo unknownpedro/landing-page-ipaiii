@@ -114,6 +114,7 @@ section {
 /* Grade de Programação */
 .programacao-grid {
     display: grid;
+    color: rgb(23, 65, 7);
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1000px;
@@ -135,14 +136,38 @@ section {
 }
 
 .card h3 {
-    color: var(--primaria);
+    color: rgb(23, 65, 7);
     margin-top: 0;
 }
 
 /* Rodapé */
 footer {
     background-color: var(--primaria);
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 2rem;
+}
+
+/* Estilos para o Mapa Responsivo */
+.mapa-container {
+    width: 100%;
+    max-width: 1000px; /* Limita o tamanho máximo no PC */
+    margin: 0 auto; /* Centraliza o mapa na tela */
+    border-radius: 8px; /* Deixa as bordas arredondadas (opcional) */
+    overflow: hidden; /* Garante que o iframe respeite as bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Uma sombra leve para ficar elegante */
+}
+
+.mapa-container iframe {
+    width: 100%; /* Faz o mapa esticar e encolher junto com a tela */
+    height: 400px; /* Altura fixa confortável para ver o mapa */
+    border: none; /* Remove a borda padrão feia do iframe */
+    display: block;
+}
+
+/* Ajuste extra para telas muito pequenas de celular */
+@media (max-width: 600px) {
+    .mapa-container iframe {
+        height: 300px; /* Deixa o mapa um pouco mais baixo em celulares para não ocupar a tela toda */
+    }
 }
