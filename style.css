@@ -33,6 +33,18 @@ header {
 header h1 {
     margin: 0;
     font-size: 1.5rem;
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Herda a cor clara definida no header */
+    font-weight: 500;
+    transition: opacity 0.2s ease-in-out; /* Deixa o hover mais suave */
+}
+
+nav ul li a:hover {
+    opacity: 0.7; /* Dá um feedback visual quando o mouse passa por cima */
 }
 
 nav ul {
@@ -52,6 +64,20 @@ nav a {
 
 nav a:hover {
     color: var(--secundaria);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Empilha o h1 e a nav */
+        gap: 1rem;
+        padding: 1rem 5%;
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* Permite que os links quebrem linha se necessário */
+        justify-content: center;
+        gap: 1rem;
+    }
 }
 
 /* Seção Principal (Hero) */
